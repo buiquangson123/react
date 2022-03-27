@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Timer from "./components/timer/Timer";
+import HackerNews from "./components/news/HackerNews";
+import { Routes, Route } from "react-router-dom";
+import Textarea from "./components/textarea/Textarea";
+import Drop from "./components/dropdown/Drop";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <Routes>
+        <Route path="/" element={<Timer />}></Route>
+        <Route path="/timer" element={<HackerNews />}></Route>
+        <Route path="/textarea" element={<Textarea />}></Route>
+        <Route path="/drop" element={<Drop />}></Route>
+      </Routes>
     </div>
   );
 }
